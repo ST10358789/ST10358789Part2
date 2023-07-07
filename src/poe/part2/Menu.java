@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 
 public class Menu {
-    static Login obj = new Login();
+    //static Tasks tasks = new Tasks();
     
     public static void User(){
     String menu = "\n\nSelect a menu below :";
@@ -26,52 +26,34 @@ public class Menu {
          User();        
     }  
     public static void registerUser(){
-        //obj.checkUserName();
-        //obj.checkPasswordComplexity();
-        //obj.returnLoginStatus();
-        TaskUtil.addTasks(TaskUtil.size);
+        Login.checkUserName();
+        Login.checkPasswordComplexity();
+        Login.returnLoginStatus();
+        Tasks task = new Tasks();
+        Part3.initializeArray(Part3.numTasks);
+        Part3.addTasks();
     }
     public static void login(){
     
-        obj.checkUserName();
-        obj.checkPasswordComplexity();
-        obj.returnLoginStatus();
-        TaskUtil.addTasks(TaskUtil.size);
+        //obj.checkUserName();
+       // obj.checkPasswordComplexity();
+       // obj.returnLoginStatus();
+        //call method to initialize the size of the array
+        Part3.newMenu();
+        Part3.initializeArray(Part3.numTasks);
+        // call menu to create/add the tasks
+        Part3.addTasks();
+        
+        //Tasks.createTasks(Tasks.size);
    
     }
     
-     public static void showMenu() {
-        //string to show menu
-        String menu = "\n\nSelect a menu below :";
-        menu += "\n1. Create/Add tasks ";
-        menu += "\n2. Show Report";
-        menu += "\n3. Quit Application";
-        
-        //show menu to user to chose 1,2,3 or 4 
-        int answer = Integer.parseInt(JOptionPane.showInputDialog( null, menu,"Welcome User", JOptionPane.INFORMATION_MESSAGE));
-         switch (answer) {
-             case 1:
-                //method to store size of tasks
-                 TaskUtil.addTasks(TaskUtil.size);
-                 break;
-             case 2:
-                 showReport();
-                 break;
-             case 3:
-                 Quit();
-                 break;
-             default:
-                 JOptionPane.showMessageDialog(null, "Incorrect option, please select a number from the menu");
-                 break;
-         }// go back to the main menu
-         showMenu();
-     }        
 //TheServerSide.2023.Java JOptionPane input example.[Online].Available At:https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Java-user-input-with-a-Swing-JOptionPane-example [Accessed 15 May 2023]
     
 
     public static void showReport() {
-        JOptionPane.showMessageDialog(null, "Coming Soon");
-        showMenu();
+        JOptionPane.showMessageDialog(null, "Task hasn't been added");
+        Part3.newMenu();
     }
 
     public static void Quit() {

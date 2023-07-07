@@ -8,7 +8,7 @@ public class Login {
    
     static Login obj = new Login();
     
-    public boolean checkUserName() {
+    public static boolean checkUserName() {
         
         //Username tips
         //Contains an Undescore
@@ -26,7 +26,7 @@ public class Login {
         }
         return false;
     }
-    public boolean checkPasswordComplexity() {
+    public static boolean checkPasswordComplexity() {
         password = JOptionPane.showInputDialog(null, "Please enter a password no longer than 8 characters long", password, JOptionPane.QUESTION_MESSAGE);
         //Password requirements
         //At least 8 characters long
@@ -68,7 +68,7 @@ public class Login {
     
         
 
-    public boolean registerUser()    
+    public static boolean registerUser()    
     { 
         // check if login user details are correct
         if (userName.equals(userName) && password.equals(password)) {
@@ -84,7 +84,7 @@ public class Login {
     }
     
     //Register login user
-    public boolean loginUser()// Register login user method
+    public static boolean loginUser()// Register login user method
     {
         
         // check if login user details are correct
@@ -100,7 +100,7 @@ public class Login {
         return false;
     }
     
-    public String returnLoginStatus(){
+    public static String returnLoginStatus(){
 //        Scanner obj = new Scanner(System.in);
 //        String firstName;
 //        firstName = obj.nextLine();
